@@ -218,12 +218,13 @@
                       method: 'POST',
                       headers: {
                           'Content-Type': 'application/json',
-                          'Authorization': 'Bearer sk-proj-hrrHvDjL3usohCmBNGZ6T3BlbkFJ5rtDi0563p8O4X99MAP3' // Substitua com sua chave de API do OpenAI
+                          'Authorization': 'Bearer sk-proj-WnEUPNWwVc7ebIn08YhVT3BlbkFJ3smB46pDQRKPtRsZfRHV' // Substitua com sua chave de API do OpenAI
                       },
                       body: JSON.stringify({
                           model: "gpt-3.5-turbo",
                           messages: [{ role: "user", content: input }],
-                          max_tokens: 800
+                          max_tokens: 800,
+                          temperature: 1,
                       })
                   };
 
@@ -287,12 +288,12 @@
                   const ambientacao = document.querySelector('input[name="ambientacao"]:checked').value;
                   const aspecto = document.querySelector('input[name="aspecto"]:checked').value;
 
-                  let textInput = `Crie uma história que será usada em uma sessão one shot de RPG com o gênero de ${genero},
-                  um tema que aborda ${tema} em um(a) ${ambientacao} com um(a) ${aspecto},
-                  cite 4 personagens NPC importantes e diga se serão aliados ou inimigos, ao fim da história diga o qual será a
+                  let textInput = `Crie um prólogo para uma história que será usada em uma sessão one shot de RPG com o gênero de ${genero},
+                  um tema que aborda ${tema} em um(a) ${ambientacao} com um(a) ${aspecto}, após isso, 
+                  cite 4 personagens NPC importantes e diga se serão aliados ou inimigos, por fim diga o qual será a
                   missão principal do grupo que estará na história, entenda que é uma história para RPG's baseados em Dungeons & Dragons,
                   dito isso incorpore no texto elementos presentes em aventuras desse universo, entenda também que os personagens que serão usados como jogadores
-                  não devem ser citados, deve ser citado apenas como o grupo que será responsável pela conclusão da missão`;
+                  não devem ser citados, deve ser citado apenas o que o grupo deve fazer para cumprir a missão e qual será a missão.`;
                   return textInput;
               }
           </script>
