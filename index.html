@@ -218,12 +218,12 @@
                       method: 'POST',
                       headers: {
                           'Content-Type': 'application/json',
-                          'Authorization': 'Bearer sk-proj-WnEUPNWwVc7ebIn08YhVT3BlbkFJ3smB46pDQRKPtRsZfRHV' // Substitua com sua chave de API do OpenAI
+                          'Authorization': 'Bearer sk-proj-StlX36UK69F357F7KomdT3BlbkFJRdz2FwmijDzFbMfMfmQu' // Substitua com sua chave de API do OpenAI
                       },
                       body: JSON.stringify({
-                          model: "gpt-3.5-turbo",
+                          model: "gpt-4-turbo",
                           messages: [{ role: "user", content: input }],
-                          max_tokens: 800,
+                          max_tokens: 1500,
                           temperature: 1,
                       })
                   };
@@ -288,12 +288,23 @@
                   const ambientacao = document.querySelector('input[name="ambientacao"]:checked').value;
                   const aspecto = document.querySelector('input[name="aspecto"]:checked').value;
 
-                  let textInput = `Crie um prólogo para uma história que será usada em uma sessão one shot de RPG com o gênero de ${genero},
-                  um tema que aborda ${tema} em um(a) ${ambientacao} com um(a) ${aspecto}, após isso, 
-                  cite 4 personagens NPC importantes e diga se serão aliados ou inimigos, por fim diga o qual será a
-                  missão principal do grupo que estará na história, entenda que é uma história para RPG's baseados em Dungeons & Dragons,
-                  dito isso incorpore no texto elementos presentes em aventuras desse universo, entenda também que os personagens que serão usados como jogadores
-                  não devem ser citados, deve ser citado apenas o que o grupo deve fazer para cumprir a missão e qual será a missão.`;
+                  let textInput = `Crie uma história para ser usada em uma One shot de RPG de mesa com o 
+                  gênero de ${genero}, um tema que aborda ${tema} em um (a) ${ambientacao} com um(a) ${aspecto} 
+                  para um grupo de aventureiros, durante o desenvolvimento, não cite os personagens que serão 
+                  os aventureiros, apenas cite o grupo em si, a criação do texto deve ser dividida em três partes: 
+                  o Prólogo, que deve ser uma explicação do contexto em que os aventureiros serão inseridos, o 
+                  evento que ocasionou a missão que o grupo deverá enfrentar, a segunda parte são os NPC’s da 
+                  história, você deverá citar 4 personagens que podem ser aliados ou inimigos, descreva com 
+                  detalhes de que forma poderão ajudar ou atrapalhar o grupo durante a história, descreva a 
+                  personalidade deles e de que modo poderiam vir a mudar de lado nessa história, ou seja, que 
+                  evento ocasionaria em um inimigo se tornar aliado e vice-versa, descreva também no mínimo um 
+                  item para cada um e como esse item seria usado na história, por fim diga o qual será a 
+                  missão principal do grupo que estará na história, entenda que é uma história para RPG's 
+                  baseados em Dungeons & Dragons, dito isso incorpore no texto elementos presentes em aventuras desse universo 
+                  como raças, nomes de magias e feitiços e classes presentes nesse universo. 
+                  Na criação do texto nao deixe espaços vazios, se existir algum segredo ou pontos na história que os aventureiros 
+                  não saibam até o começo da jornada esses segredos ou pontos devem estar esclarecidos visto que é um texto 
+                  que será usado pelo mestre da campanha e ele deve ter acesso a todas as informações. `;
                   return textInput;
               }
           </script>
